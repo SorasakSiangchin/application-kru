@@ -1,0 +1,43 @@
+{
+  "name": "application-kru",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 8888",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate-seed-category" : "npx prisma migrate dev && ts-node prisma/seed-category.ts",
+    "migrate-seed-categoryV2" : "npx prisma migrate dev && npx tsx prisma/seed-category.ts"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@hookform/resolvers": "^4.1.3",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/material": "^7.0.0",
+    "@mui/x-data-grid": "^7.28.1",
+    "@prisma/client": "^6.5.0",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "jose": "^6.0.10",
+    "next": "15.2.4",
+    "prisma": "^6.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "use-debounce": "^10.0.4",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
