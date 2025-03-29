@@ -7,6 +7,9 @@ import { Controller, useForm } from "react-hook-form";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import registerValidate from "./registerValidate";
+import { register } from "@/app/_actions/userAction";
+import { RegisterRequest } from "@/interface/userInterface";
+import Swal from "sweetalert2";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -28,8 +31,29 @@ const RegisterPage = () => {
     resolver: zodResolver(registerValidate),
   });
 
-  const onSubmit = handleSubmit((value) => {
-    console.log("value : ", value);
+  const onSubmit = handleSubmit(async (value) => {
+    const result = await register(value as any);
+
+    if (result.success) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "สมัครสมาชิกสำเร็จ!",
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(() => {
+        router.push("/login");
+      });
+      return;
+    }
+
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      text: result.message.toString(),
+      title: "สมัครสมาชิกไม่สำเร็จ!",
+      showConfirmButton: false,
+    });
   });
 
   return (

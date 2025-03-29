@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate-seed-category" : "npx prisma migrate dev && ts-node prisma/seed-category.ts",
-    "migrate-seed-categoryV2" : "npx prisma migrate dev && npx tsx prisma/seed-category.ts"
+    "migrate-seed-category": "npx prisma migrate dev && ts-node prisma/seed-category.ts",
+    "migrate-seed-categoryV2": "npx prisma migrate dev && npx tsx prisma/seed-category.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -27,6 +27,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "sweetalert2": "^11.17.2",
     "use-debounce": "^10.0.4",
     "uuid": "^11.1.0",
     "zod": "^3.24.2",
