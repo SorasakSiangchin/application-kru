@@ -2,26 +2,23 @@ GET http://localhost:8888/api/user
 
 ###
 
-POST http://localhost:8888/api/user HTTP/1.1
+POST http://localhost:8888/api/user/register HTTP/1.1
 Content-Type: "application/json"
 
 {
-    "id" : 1 ,
-    "name" : "product testing" ,
-    "price"  : 100
+    "firstName" : "sorasak" ,
+    "lastName" : "siangchin" ,
+    "email" : "sorasak@gmail.com" ,
+    "password" : "123456" ,
+    "age" : "23" 
 }
 
 ###
 
-PUT http://localhost:8888/api/user/3 
+POST http://localhost:8888/api/user/login HTTP/1.1
 Content-Type: "application/json"
 
 {
-    "id" : 2 ,
-    "name" : "product testing 2" ,
-    "price"  : 200 
+    "email" : "sorasak@gmail.com" ,
+    "password" : "123456" 
 }
-
-###
-
-DELETE http://localhost:8888/api/user/2 HTTP/1.1

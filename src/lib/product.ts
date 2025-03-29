@@ -1,7 +1,23 @@
+import { ProductParam } from "@/interface/productInterface";
 import { db } from "./db";
 
-async function getProducts() {
+async function getProducts({
+  searchName,
+  categoryId,
+  sortPrice,
+}: ProductParam) {
   return await db.product.findMany({
+    where: {
+      name: {
+        contains: searchName ? searchName : undefined,
+      },
+      categoryId: {
+        equals: categoryId ? categoryId : undefined,
+      },
+    },
+    orderBy: {
+      price: sortPrice as any,
+    },
     include: {
       category: true,
     },
